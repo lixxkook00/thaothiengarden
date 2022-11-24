@@ -1,0 +1,13 @@
+body {
+    background-color: var(--color-bg-2);
+    color: var(--color-text-1);
+}
+
+/*
+=============================================
+                    INTRO 
+=============================================
+*/
+.intro.section {
+    padding: 3em 0 0;
+}
