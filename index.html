@@ -1,8 +1,6 @@
 <!doctype html>
 <html lang="en" id="data-theme">
 
-
-<!-- Mirrored from thaothiengarden.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 24 Nov 2022 13:54:26 GMT -->
 <head>
     <!-- REQUIRED META TAGS -->
     <meta charset="UTF-8">
@@ -23,6 +21,9 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet"
         href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+
+    <!-- DATE PICKER -->
+    <script src="https://cdn.jsdelivr.net/npm/litepicker/dist/bundle.js"></script>
 
     <!-- SLICK CSS -->
     <link rel="stylesheet" href="css/slick.css">
@@ -68,7 +69,7 @@
                             <a class="nav-link nav-menu active" href="#">Trang chủ</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link nav-menu" href="aboutUs/aboutUs.html">Giới thiệu</a>
+                            <a class="nav-link nav-menu" href="aboutUs.html">Giới thiệu</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle nav-menu" href="#" id="navbarDropdownMenuLink"
@@ -76,8 +77,8 @@
                                 Dịch vụ
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="Hotels/index.html">Khách sạn</a>
-                                <a class="dropdown-item" href="restaurants/index.html">Nhà hàng</a>
+                                <a class="dropdown-item" href="hotel.html">Khách sạn</a>
+                                <a class="dropdown-item" href="restaurants.html">Nhà hàng</a>
 
                             </div>
                         </li>
@@ -100,131 +101,149 @@
         </div>
     </header>
 
-    <!-- ================ CAROUSEL =============== -->
-    <section id="carouselId" class="carousel carousel1 slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#carouselId" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselId" data-slide-to="1"></li>
-            <li data-target="#carouselId" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner" role="listbox">
-            <div class="carousel-item active">
-                <img src="Images/ks.jpg" alt="Thảo Thiện Carousel">
-                <div class="carousel-caption container">
-                    <h1 class="animate__animated animate__fadeInUp animate__slow">
-                        <strong>Thao Thien Garden <br></strong>
-                        your amazing resort
-                    </h1>
-                    <!-- <p class="animate__animated animate__fadeInUp animate__slow">
-                        The place where the best things come together.
-                    </p> -->
+    <!-- ================ BOOKING BAR =============== -->
+    <section class="booking-bar hidden-m-t ">
+        <div class="booking-bar-wrapper">
+            <!-- <div class="booking-bar-item">
+                <div class="booking-bar-icon">
+                    <i class="fa-solid fa-hotel"></i>
+                </div>
+            </div> -->
+
+            <div class="booking-bar-item">
+                <div class="booking-bar-label">
+                    Thời gian
+                </div>
+                <div class="booking-bar-date">
+                    <!-- <input id="booking-bar-date-picker" type="text" name="daterange" value="01/01/2018 - 01/15/2018" /> -->
+                    <input id="litepicker" readonly></input>
                 </div>
             </div>
-            <div class="carousel-item">
-                <img src="Images/khuonvien.jpg" alt="Thảo Thiện Carousel" class="img-fluid">
-                <div class="carousel-caption container">
-                    <h1 class="animate__animated animate__fadeInUp animate__slow">
-                        <strong>Thao Thien Garden <br></strong>
-                        your amazing resort
-                    </h1>
-                    <!-- <p class="animate__animated animate__fadeInUp animate__slow">
-                        The place where the best things come together.
-                    </p> -->
+            <div class="booking-bar-item">
+                <div class="booking-bar-label">
+                    Dịch vụ
+                </div>
+                <div class="booking-bar-service">
+                    <select name="cars" id="cars">
+                        <optgroup label="Khách sạn">
+                            <option value="Hotel">Hotel</option>
+                            <option value="HomeStay">HomeStay</option>
+                            <option value="Bungalow">Bungalow</option>
+                            <option value="Dormitory">Dormitory</option>
+                            <option value="Family">Family</option>
+                        </optgroup>
+                        <optgroup label="Nhà hàng">
+                            <option value="Combo 130k">Combo 130k</option>
+                            <option value="Combo 130k">Combo 150k</option>
+                            <option value="Combo 130k">Combo 160k</option>
+                            <option value="Combo 130k">Combo 170k</option>
+                        </optgroup>
+                    </select>
                 </div>
             </div>
-            <div class="carousel-item">
-                <img src="Images/bg-tiecngoaitroi.jpg" alt="Thảo Thiện Carousel" class="img-fluid">
-                <div class="carousel-caption container">
-                    <h1 class="animate__animated animate__fadeInUp animate__slow">
-                        <strong>Thao Thien Garden <br></strong>
-                        your amazing resort
-                    </h1>
-                    <!-- <p class="animate__animated animate__fadeInUp animate__slow">
-                        The place where the best things come together.
-                    </p> -->
+            <div class="booking-bar-item">
+                <div class="booking-bar-label">
+                    Số lượng
+                </div>
+                <div class="booking-bar-people">
+                    <div class="booking-bar-people-button" onclick="decrementValue()">-</div>
+                    <input type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="number" />
+                    <div class="booking-bar-people-button" onclick="incrementValue()">+</div>
                 </div>
             </div>
-            <div class="carousel-item">
-                <img src="Images/bg-tiecngoaitroi.jpg" alt="Thảo Thiện Carousel" class="img-fluid">
-                <div class="carousel-caption container">
-                    <h1 class="animate__animated animate__fadeInUp animate__slow">
-                        <strong>Thao Thien Garden <br></strong>
-                        your amazing resort
-                    </h1>
-                    <!-- <p class="animate__animated animate__fadeInUp animate__slow">
-                        The place where the best things come together.
-                    </p> -->
+            <div class="booking-bar-item">
+                <div class="booking-bar-submit">
+                    Đặt ngay
                 </div>
             </div>
         </div>
-        <a class="carousel-control-prev" href="#carouselId" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselId" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
     </section>
 
+    <!-- VIDEO INTRO -->
+    <div id="home-main" class="video-intro">
+        <video id="health_video" loop autoplay muted="" playsinline webkit-playsinline preload="none">
+            <source loop autoplay muted="" playsinline webkit-playsinline preload="none"
+                src="/Images/THAO THIEN 29 6.mp4" type="video/mp4">
+        </video>
+    </div>
 
-    <!-- ================ SERVICES =============== -->
-    <!-- <section class="services inner-section text-center">
-        <div class="container">
-            <div class="row d-flex">
-                <div class="col-md-6 col-xl-3">
-                    <div class="services__item wow animate__animated animate__fadeInUp">
-                        <div class="services__header d-flex justify-content-center">
-                            <i class="fa-solid fa-money-bill-wave"></i>
-                        </div>
-                        <div class="services__body px-2 mt-3">
-                            <h3 class="mb-0">Đảm bảo giá cả tốt nhất</h3>
-                             <p>A small river named Duden flows by their place and supplies.</p>
-                        </div>
-                    </div>
+    <!-- ================ BOOKING BAR MOBILE =============== -->
+    <div class="accordion hide-on-pc" id="accordion2">
+        <div class="card mb-3">
+            <div class="centering">
+                <div class="card-header" id="headingOne">
+                    <button type="button" class="regis-now" data-toggle="collapse" data-target="#collapseOne"
+                        aria-expanded="true" aria-controls="collapseOne">
+                        Đăng kí kì nghỉ ngay cho bạn
+                        <span class="icon-faq"><i class="fa fa-chevron-down"></i></span>
+                    </button>
                 </div>
-                <div class="col-md-6 col-xl-3">
-                    <div class="services__item wow animate__animated animate__fadeInUp">
-                        <div class="services__header d-flex justify-content-center">
-                            <i class="fa-solid fa-heart"></i>
+            </div>
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body">
+                    <div class="booking-bar booking-bar-mobile">
+                        <div class="booking-bar-wrapper">
+
+                            <div class="booking-bar-item">
+                                <div class="booking-bar-label">
+                                    Thời gian
+                                </div>
+                                <div class="booking-bar-date">
+                                    <!-- <input id="booking-bar-date-picker" type="text" name="daterange" value="01/01/2018 - 01/15/2018" /> -->
+                                    <input id="litepicker2" readonly></input>
+                                </div>
+                            </div>
+                            <div class="booking-bar-item">
+                                <div class="booking-bar-label">
+                                    Dịch vụ
+                                </div>
+                                <div class="booking-bar-service">
+                                    <select name="cars" id="cars">
+                                        <optgroup label="Khách sạn">
+                                            <option value="Hotel">Hotel</option>
+                                            <option value="HomeStay">HomeStay</option>
+                                            <option value="Bungalow">Bungalow</option>
+                                            <option value="Dormitory">Dormitory</option>
+                                            <option value="Family">Family</option>
+                                        </optgroup>
+                                        <optgroup label="Nhà hàng">
+                                            <option value="Combo 130k">Combo 130k</option>
+                                            <option value="Combo 130k">Combo 150k</option>
+                                            <option value="Combo 130k">Combo 160k</option>
+                                            <option value="Combo 130k">Combo 170k</option>
+                                        </optgroup>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="booking-bar-item">
+                                <div class="booking-bar-label">
+                                    Số lượng
+                                </div>
+                                <div class="booking-bar-people">
+                                    <div class="booking-bar-people-button" onclick="decrementValue()">-</div>
+                                    <input type="text" name="quantity" value="1" maxlength="2" max="10" size="1"
+                                        id="number2" />
+                                    <div class="booking-bar-people-button" onclick="incrementValue()">+</div>
+                                </div>
+                            </div>
+                            <div class="booking-bar-item">
+                                <div class="booking-bar-submit">
+                                    Đặt ngay
+                                </div>
+                            </div>
                         </div>
-                        <div class="services__body px-2 mt-3">
-                            <h3 class="mb-0">Điểm đến yêu thích nhất</h3>
-                             <p>A small river named Duden flows by their place and supplies.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-xl-3">
-                    <div class="services__item wow animate__animated animate__fadeInUp">
-                        <div class="services__header d-flex justify-content-center">
-                            <i class="fa-solid fa-user-secret"></i>
-                        </div>
-                        <div class="services__body px-2 mt-3">
-                            <h3 class="mb-0">Đại lý du lịch tốt nhất</h3>
-                            <p>A small river named Duden flows by their place and supplies.</p> 
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-xl-3">
-                    <div class="services__item wow animate__animated animate__fadeInUp">
-                        <div class="services__header d-flex justify-content-center">
-                            <i class="fa-solid fa-headset"></i>
-                        </div>
-                        <div class="services__body px-2 mt-3">
-                            <h3 class="mb-0">Hỗ trợ tận tâm nhất</h3>
-                            <p>A small river named Duden flows by their place and supplies.</p>
-                        </div>
+                        </section>
                     </div>
                 </div>
             </div>
         </div>
-    </section> -->
+    </div>
 
     <!-- ================ DESTINATION =============== -->
     <section class="destination inner-section">
         <div class="container">
-            <div class="destination__title mb-5 pb-3 ">
-                <p class="subheading wow animate__animated animate__fadeInUp">Điểm nổi bật</p>
+            <div class="destination__title mb-3">
+                <!-- <p class="subheading wow animate__animated animate__fadeInUp">Điểm nổi bật</p> -->
                 <h2 class="heading-section wow animate__animated animate__fadeInUp" data-wow-delay="0.2s">
                     <strong>Dịch vụ</strong>
                     nổi bật
@@ -242,7 +261,8 @@
                             </a>
                             <div class="card-body">
                                 <h4 class="card-title">Cắm trại</h4>
-                                <p class="card-text">Phù hợp cho các hoạt động Teambuilding, sinh hoạt ngoại khoá.</p>
+                                <p class="card-text">Phù hợp cho các hoạt động Teambuilding, sinh hoạt ngoại khoá.
+                                </p>
                             </div>
                         </div>
                         <div class="card destination__item">
@@ -254,7 +274,8 @@
                             </a>
                             <div class="card-body">
                                 <h4 class="card-title">Teambuilding</h4>
-                                <p class="card-text">Phù hợp cho các công ty, trường học tổ chức ngoại khoá, tăng tính
+                                <p class="card-text">Phù hợp cho các công ty, trường học tổ chức ngoại khoá, tăng
+                                    tính
                                     đoàn kết và kết nối.</p>
                             </div>
                         </div>
@@ -267,7 +288,8 @@
                             </a>
                             <div class="card-body">
                                 <h4 class="card-title">Hồ bơi</h4>
-                                <p class="card-text">Phù hợp cho các hoạt động dưới nước và các khoá dạy bơi cho trẻ em
+                                <p class="card-text">Phù hợp cho các hoạt động dưới nước và các khoá dạy bơi cho trẻ
+                                    em
                                     và người lớn.</p>
                             </div>
                         </div>
@@ -280,7 +302,8 @@
                             </a>
                             <div class="card-body">
                                 <h4 class="card-title">Hội nghị</h4>
-                                <p class="card-text">Phù hợp cho các buổi hội thảo, họp nội bộ, Gala Dinner, triển khai
+                                <p class="card-text">Phù hợp cho các buổi hội thảo, họp nội bộ, Gala Dinner, triển
+                                    khai
                                     dự án, ký kết hợp đồng.</p>
                             </div>
                         </div>
@@ -306,7 +329,8 @@
                             </a>
                             <div class="card-body">
                                 <h4 class="card-title">Khu vui chơi</h4>
-                                <p class="card-text">Trải nghiệm các trò chơi cảm giác mạnh như: Thảm bay, tàu lượn siêu
+                                <p class="card-text">Trải nghiệm các trò chơi cảm giác mạnh như: Thảm bay, tàu lượn
+                                    siêu
                                     tốc, xe điện đụng, đu quay,...</p>
                             </div>
                         </div>
@@ -319,7 +343,8 @@
                             </a>
                             <div class="card-body">
                                 <h4 class="card-title">Trung tâm tiệc cưới</h4>
-                                <p class="card-text">Không gian xanh, sức chứa hàng trăm khách, một nơi lý tưởng để tổ
+                                <p class="card-text">Không gian xanh, sức chứa hàng trăm khách, một nơi lý tưởng để
+                                    tổ
                                     chức tiệc cưới của bạn.</p>
                             </div>
                         </div>
@@ -332,8 +357,7 @@
     <!-- ================ TOUR =============== -->
     <section class="tour inner-section">
         <div class="container">
-            <div class="tour__title mb-5 pb-3">
-                <p class="subheading wow animate__animated animate__fadeInUp">Tour</p>
+            <div class="tour__title mb-3">
                 <h2 class="heading-section wow animate__animated animate__fadeInUp" data-wow-delay="0.2s">
                     <strong>Tour</strong>
                     trải nghiệm thực tế
@@ -385,7 +409,8 @@
                                 <!-- <span>$200</span> -->
                             </div>
                             <p class="card-text">
-                                Trải nghiệm cuộc sống của người miền Tây với hoạt động Ao bắt cá tại Thảo Thiện Garden.
+                                Trải nghiệm cuộc sống của người miền Tây với hoạt động Ao bắt cá tại Thảo Thiện
+                                Garden.
                             </p>
                             <!-- <p class="tour__time">2 days 3 nights</p> -->
                             <div class="card-footer">
@@ -475,7 +500,8 @@
                                 <!-- <span>$200</span> -->
                             </div>
                             <p class="card-text">
-                                Trải nghiệm chèo thuyền trên sông lười, khám phá vườn trái cây tại Thảo Thiện Garden.
+                                Trải nghiệm chèo thuyền trên sông lười, khám phá vườn trái cây tại Thảo Thiện
+                                Garden.
                             </p>
                             <!-- <p class="tour__time">2 days 3 nights</p> -->
                             <div class="card-footer">
@@ -497,7 +523,7 @@
     <!-- ================ NUMBERS =============== -->
     <section class="numbers inner-section text-center">
         <div class="container">
-            <div class="numbers__title mb-5 pb-3 wow animate__animated animate__fadeInUp">
+            <div class="numbers__title mb-3 wow animate__animated animate__fadeInUp">
                 <h2 class="mb-4">Những con số ấn tượng</h2>
                 <p class="subheading">Với 50,000 lượt khách đã ghé thăm trong năm 2021</p>
             </div>
@@ -548,7 +574,7 @@
                 <div class="card-header">
                     <img src="Images/Superior-Double.jpg" alt="Hotel 1">
                     <div class="icon">
-                        <a href="ThaoThienProject/Hotels/index.html" target="_blank"><i
+                        <a href="ThaoThienProject/hotel.html" target="_blank"><i
                                 class="fa-solid fa-magnifying-glass"></i></a>
                     </div>
                 </div>
@@ -583,7 +609,7 @@
                 <div class="card-header">
                     <img src="Images/superior-tripple.jpg" alt="Hotel 2">
                     <div class="icon">
-                        <a href="ThaoThienProject/Hotels/index.html" target="_blank"><i
+                        <a href="ThaoThienProject/hotel.html" target="_blank"><i
                                 class="fa-solid fa-magnifying-glass"></i></a>
                     </div>
                 </div>
@@ -598,7 +624,8 @@
                     </div>
                     <p class="user"><i class="las la-user-friends"></i> Tiêu chuẩn 4 người
                         <a href="#" data-toggle="modal" data-target="#staticBackdrop2"><i
-                                class="las la-info-circle"></i></a></p>
+                                class="las la-info-circle"></i></a>
+                    </p>
                     <p class="area"><i class="las la-warehouse"></i> 25m2</p>
                     <p class="bed"><i class="las la-bed"></i> 2 giường đôi</p>
                     <p class="view"><i class="las la-eye"></i> Hướng trung tâm</p>
@@ -617,7 +644,7 @@
                 <div class="card-header">
                     <img src="Images/ks.jpg" alt="Hotel 3">
                     <div class="icon">
-                        <a href="ThaoThienProject/Hotels/index.html" target="_blank"><i
+                        <a href="ThaoThienProject/hotel.html" target="_blank"><i
                                 class="fa-solid fa-magnifying-glass"></i></a>
                     </div>
                 </div>
@@ -651,7 +678,7 @@
                 <div class="card-header">
                     <img src="Images/bg-bungalow.jpg" alt="Hotel 4">
                     <div class="icon">
-                        <a href="ThaoThienProject/Hotels/index.html" target="_blank"><i
+                        <a href="ThaoThienProject/hotel.html" target="_blank"><i
                                 class="fa-solid fa-magnifying-glass"></i></a>
                     </div>
                 </div>
@@ -685,7 +712,7 @@
                 <div class="card-header">
                     <img src="Images/bg-hotelgd.jpg" alt="Hotel 5">
                     <div class="icon">
-                        <a href="ThaoThienProject/Hotels/index.html" target="_blank"><i
+                        <a href="ThaoThienProject/hotel.html" target="_blank"><i
                                 class="fa-solid fa-magnifying-glass"></i></a>
                     </div>
                 </div>
@@ -716,146 +743,16 @@
             </div>
         </div>
     </section>
-    <!-- ===HOTEL MODAL=== -->
-    <!--
-    <div class="modal fade" id="staticBackdrop1" data-backdrop="static" data-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Superior Double</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <ul>
-                        <li>- Sức chứa tối đa của phòng: 4 người</li>
-                        <li>- Số khách tiêu chuẩn: 2 người</li>
-                        <li>- Cho phép ở thêm 2 trẻ em thỏa mãn đủ 4 khách. Nếu vượt số người tối đa của phòng có thể mất
-                            thêm phí</li>
-                        <li>- Giá thuê phòng đã bao gồm ăn sáng và hồ bơi.</li>
-                    </ul>
-                </div>
-                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Understood</button>
-                </div> 
-            </div>
-        </div>
-    </div>
-    Modal hotel 2 
-    <div class="modal fade" id="staticBackdrop2" data-backdrop="static" data-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Superior Room 2</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p>- Sức chứa tối đa của phòng: 4 người</p>
-                    <p>- Số khách tiêu chuẩn: 2 người</p>
-                    <p>- Cho phép ở thêm 2 trẻ em thỏa mãn đủ 4 khách. Nếu vượt số người tối đa của phòng có thể mất
-                        thêm phí</p>
-                    <p>- Giá thuê phòng đã bao gồm ăn sáng và hồ bơi.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                     <button type="button" class="btn btn-primary">Understood</button> 
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="modal fade" id="staticBackdrop3" data-backdrop="static" data-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Superior Room 3</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p>- Sức chứa tối đa của phòng: 4 người</p>
-                    <p>- Số khách tiêu chuẩn: 2 người</p>
-                    <p>- Cho phép ở thêm 2 trẻ em thỏa mãn đủ 4 khách. Nếu vượt số người tối đa của phòng có thể mất
-                        thêm phí</p>
-                    <p>- Giá thuê phòng đã bao gồm ăn sáng và hồ bơi.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                     <button type="button" class="btn btn-primary">Understood</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="modal fade" id="staticBackdrop4" data-backdrop="static" data-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Superior Room 4</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p>- Sức chứa tối đa của phòng: 4 người</p>
-                    <p>- Số khách tiêu chuẩn: 2 người</p>
-                    <p>- Cho phép ở thêm 2 trẻ em thỏa mãn đủ 4 khách. Nếu vượt số người tối đa của phòng có thể mất
-                        thêm phí</p>
-                    <p>- Giá thuê phòng đã bao gồm ăn sáng và hồ bơi.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                     <button type="button" class="btn btn-primary">Understood</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="modal fade" id="staticBackdrop5" data-backdrop="static" data-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Superior Room 5</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p>- Sức chứa tối đa của phòng: 4 người</p>
-                    <p>- Số khách tiêu chuẩn: 2 người</p>
-                    <p>- Cho phép ở thêm 2 trẻ em thỏa mãn đủ 4 khách. Nếu vượt số người tối đa của phòng có thể mất
-                        thêm phí</p>
-                    <p>- Giá thuê phòng đã bao gồm ăn sáng và hồ bơi.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                     <button type="button" class="btn btn-primary">Understood</button>
-                </div>
-            </div>
-        </div>
-    </div>
-   -->
-
 
     <!-- ================ VIDEO =============== -->
-    <section class="video d-flex inner-section">
+    <!-- <section class="video d-flex inner-section">
         <div class="container">
             <video autoplay muted>
                 <source src="Images/THAO%20THIEN%2029%206.mp4" type="video/mp4">
             </video>
         </div>
 
-    </section>
+    </section> -->
 
     <!-- ================ FEEDBACK =============== -->
     <section class="feedback inner-section">
@@ -869,14 +766,16 @@
                         </h2>
                     </div>
                     <div class="feedback-content">
-                        <p>Với diện tích gần 140.000 m2, khuôn viên rộng rãi, thoáng mát. Khu du lịch Thảo Thiện Garden
+                        <p>Với diện tích gần 140.000 m2, khuôn viên rộng rãi, thoáng mát. Khu du lịch Thảo Thiện
+                            Garden
                             luôn được nhiều Quý khách hàng quan tâm và lựa chọn làm nơi tổ chức các chương trình hội
                             nghị, hội thảo, Team Building, hội trại, tiệc ngoài trời, picnic,…</p>
-                        <p>Với vô vàn tiện ích và dịch vụ tuyệt vời. Thảo Thiện Garden là nơi bạn và gia đình không thể
+                        <p>Với vô vàn tiện ích và dịch vụ tuyệt vời. Thảo Thiện Garden là nơi bạn và gia đình không
+                            thể
                             bỏ qua trong mùa hè này. Check in ngay thôi nào!!!</p>
                     </div>
                     <div class="button">
-                        <a class="btn-feedback" href="aboutUs/aboutUs.html">Đọc thêm</a>
+                        <a class="btn-feedback" href="aboutUs.html">Đọc thêm</a>
                     </div>
                 </div>
                 <div class="col-12 col-md-6 feadback-item wow animate__animated animate__fadeInRight">
@@ -900,7 +799,8 @@
                                     </div>
                                     <div class="col-9 text">
                                         <p class="text-top mb-0">Ngày lễ 2/9 thật thú vị cùng gia đình khi được chèo
-                                            thuyền khám phá vườn trái cây tại Thảo Thiện Garden. Sẽ tiếp tục ghé thăm
+                                            thuyền khám phá vườn trái cây tại Thảo Thiện Garden. Sẽ tiếp tục ghé
+                                            thăm
                                             vào những dịp sắp tới.</p>
                                         <p class="text-bottom mb-0">Chị Thuý An</p>
                                         <span class="adress">Đến từ TP.HCM</span>
@@ -913,7 +813,8 @@
                                         <img src="Images/user2-nguyennham.jpg" alt="">
                                     </div>
                                     <div class="col-9 text">
-                                        <p class="text-top mb-0">Hồ bơi tại Thảo Thiện cực lớn, cả gia đình vừa tắm vừa
+                                        <p class="text-top mb-0">Hồ bơi tại Thảo Thiện cực lớn, cả gia đình vừa tắm
+                                            vừa
                                             ăn uống cả ngày mà mỗi người chỉ 50k, quá rẽ. Gia đình mình sẽ ghé chơi
                                             thường xuyên.</p>
                                         <p class="text-bottom mb-0">Chị Nguyễn Nhâm</p>
@@ -927,8 +828,10 @@
                                         <img src="Images/user3-Vuongkieu.jpg" alt="">
                                     </div>
                                     <div class="col-9 text">
-                                        <p class="text-top mb-0">Một buổi họp mặt với bộ phận kinh doanh thật ý nghĩa
-                                            tại nhà hàng Thảo Thiện Garden. Món ăn ở đây quá ngon, ăn nhậu thoải mái mà
+                                        <p class="text-top mb-0">Một buổi họp mặt với bộ phận kinh doanh thật ý
+                                            nghĩa
+                                            tại nhà hàng Thảo Thiện Garden. Món ăn ở đây quá ngon, ăn nhậu thoải mái
+                                            mà
                                             mỗi người chỉ 200k, quá OK ^^!</p>
                                         <p class="text-bottom mb-0">Chị Vương Kiều</p>
                                         <span class="adress">Đến từ TP.HCM</span>
@@ -970,7 +873,7 @@
                             <img src="Images/bg-bunmoc.jpg" alt="Hotel 1">
 
                             <div class="icon">
-                                <a href="ThaoThienProject/restaurants/index.html" target="_blank"><i
+                                <a href="ThaoThienProject/restaurants.html" target="_blank"><i
                                         class="fa-solid fa-magnifying-glass"></i></a>
                             </div>
                         </div>
@@ -978,7 +881,8 @@
                             <div class="rest-heading">
                                 <h5>Điểm tâm sáng</h5>
                             </div>
-                            <p class="user mt-3">Phục vụ điểm tâm sáng các đoàn du lịch, công ty lữ hành với các món bún
+                            <p class="user mt-3">Phục vụ điểm tâm sáng các đoàn du lịch, công ty lữ hành với các món
+                                bún
                                 mọc, hủ tiếu, bánh canh, ốp la,...</p>
                         </div>
                         <hr>
@@ -993,7 +897,7 @@
                         <div class="card-header">
                             <img src="Images/bg-hamruou.jpg" alt="Hotel 1">
                             <div class="icon">
-                                <a href="ThaoThienProject/restaurants/index.html" target="_blank"><i
+                                <a href="ThaoThienProject/restaurants.html" target="_blank"><i
                                         class="fa-solid fa-magnifying-glass"></i></a>
                             </div>
                         </div>
@@ -1001,7 +905,8 @@
                             <div class="rest-heading">
                                 <h5>Hầm rượu vang</h5>
                             </div>
-                            <p class="user mt-3">Với không gian cổ điển, Hầm Rượu Vang là nơi lý tưởng để tổ chức tiệc
+                            <p class="user mt-3">Với không gian cổ điển, Hầm Rượu Vang là nơi lý tưởng để tổ chức
+                                tiệc
                                 sinh nhật, sự kiện, hội họp… </p>
                         </div>
                         <hr>
@@ -1016,7 +921,7 @@
                         <div class="card-header">
                             <img src="Images/bg-tiecngoaitroi.jpg" alt="Hotel 1">
                             <div class="icon">
-                                <a href="ThaoThienProject/restaurants/index.html" target="_blank"><i
+                                <a href="ThaoThienProject/restaurants.html" target="_blank"><i
                                         class="fa-solid fa-magnifying-glass"></i></a>
                             </div>
                         </div>
@@ -1024,7 +929,8 @@
                             <div class="rest-heading">
                                 <h5>Tiệc ngoài trời</h5>
                             </div>
-                            <p class="user mt-3">Một không gian ngoài trời đẹp với màu xanh tươi mát của cây xanh rất
+                            <p class="user mt-3">Một không gian ngoài trời đẹp với màu xanh tươi mát của cây xanh
+                                rất
                                 phù hợp với một buổi tiệc ngoài trời ấm cúng bên gia đình.</p>
                         </div>
                         <hr>
@@ -1039,7 +945,7 @@
                         <div class="card-header">
                             <img src="Images/bg-comdoan.jpg" alt="Hotel 1">
                             <div class="icon">
-                                <a href="ThaoThienProject/restaurants/index.html" target="_blank"><i
+                                <a href="ThaoThienProject/restaurants.html" target="_blank"><i
                                         class="fa-solid fa-magnifying-glass"></i></a>
                             </div>
                         </div>
@@ -1047,7 +953,8 @@
                             <div class="rest-heading">
                                 <h5>Cơm khách lữ hành</h5>
                             </div>
-                            <p class="user mt-3">Là một điểm dừng chân lý tưởng cho các đoàn du lịch ghé dùng bữa trưa
+                            <p class="user mt-3">Là một điểm dừng chân lý tưởng cho các đoàn du lịch ghé dùng bữa
+                                trưa
                                 để tiếp tục hành trình du lịch.</p>
                         </div>
                         <hr>
@@ -1062,98 +969,6 @@
             </div>
         </div>
     </section>
-
-    <!-- ================ BLOG =============== -->
-    <!-- <section class="blog inner-section">
-        <div class="container">
-            <div class="blog-title">
-                <span class="subheading">Recent Blog</span>
-                <h2 class="heading">
-                    <strong>Tips</strong> & Articles
-                </h2>
-            </div>
-            <div class="blog-content">
-                <div class="row">
-                    <div class="col-lg col-md-6 blog-item">
-                        <div class="card-header">
-                            <img src="./Images/ximage_1.jpg.pagespeed.ic.dkgdif6kRI.webp" alt="Hotel 1">
-                            <div class="icon">
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="blog-heading">
-                                <h5>Tips, Travel</h5>
-                            </div>
-                            <a href="#" class="title">8 Best homestay in Philippines that you don't miss out</a>
-                        </div>
-                        <div class="card-footer">
-                            <div class="footer-bot">
-                                <p class="m-0"> August 12, 2022 Admin</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg col-md-6 blog-item">
-                        <div class="card-header">
-                            <img src="./Images/ximage_2.jpg.pagespeed.ic.9oZjwXrMn5.webp" alt="Hotel 1">
-                            <div class="icon">
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="blog-heading">
-                                <h5>Tips, Travel</h5>
-                            </div>
-                            <a href="#" class="title">8 Best homestay in Philippines that you don't miss out</a>
-                        </div>
-                        <div class="card-footer">
-                            <div class="footer-bot">
-                                <p class="m-0"> August 12, 2022 Admin</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg col-md-6 blog-item">
-                        <div class="card-header">
-                            <img src="./Images/ximage_3.jpg.pagespeed.ic.juyryIQIsn.webp" alt="Hotel 1">
-                            <div class="icon">
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="blog-heading">
-                                <h5>Tips, Travel</h5>
-                            </div>
-                            <a href="#" class="title">8 Best homestay in Philippines that you don't miss out</a>
-                        </div>
-                        <div class="card-footer">
-                            <div class="footer-bot">
-                                <p class="m-0"> August 12, 2022 Admin</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg col-md-6 blog-item">
-                        <div class="card-header">
-                            <img src="./Images/ximage_4.jpg.pagespeed.ic.3OCtSzlCzL.webp" alt="Hotel 1">
-                            <div class="icon">
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="blog-heading">
-                                <h5>Tips, Travel</h5>
-                            </div>
-                            <a href="#" class="title">8 Best homestay in Philippines that you don't miss out</a>
-                        </div>
-                        <div class="card-footer">
-                            <div class="footer-bot">
-                                <p class="m-0"> August 12, 2022 Admin</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
 
     <!-- ================ FAQ =============== -->
     <section class="FAQ inner-section">
@@ -1172,7 +987,7 @@
                                     Thảo Thiện Garden có cho đem đồ ăn bên ngoài vào hay không?
                                     <span class="icon-faq"><i class="fa fa-chevron-down"></i></span>
                                 </button>
-                               
+
                             </h2>
                         </div>
                         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
@@ -1274,7 +1089,7 @@
                             <h4>Thông tin</h4>
                         </div>
                         <ul>
-                            <li><a href="aboutUs/aboutUs.html">About Us</a></li>
+                            <li><a href="aboutUs.html">About Us</a></li>
                             <li><a href="#">Services</a></li>
                             <li><a href="#">Terms and Conditions</a></li>
                             <li><a href="#">Become a partner</a></li>
@@ -1297,7 +1112,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>Copyright © 2022  <a href="#"><span>Thao Thien Garden</span></a> . All rights reserved.</p>
+                <p>Copyright © 2022 <a href="#"><span>Thao Thien Garden</span></a> . All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -1317,13 +1132,13 @@
     <!-- JQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-    </script>
+        </script>
 
     <!-- JQUERY CDN -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -1353,6 +1168,22 @@
 
     <!-- Your SDK code -->
     <script>
+        const picker = new Litepicker({
+            element: document.getElementById('litepicker'),
+            singleMode: false,
+            tooltipNumber: (totalDays) => {
+                return totalDays - 1;
+            }
+        });
+
+        const picker2 = new Litepicker({
+            element: document.getElementById('litepicker2'),
+            singleMode: false,
+            tooltipNumber: (totalDays) => {
+                return totalDays - 1;
+            }
+        });
+
         var chatbox = document.getElementById('fb-customer-chat');
         chatbox.setAttribute("page_id", "776910875998558");
         chatbox.setAttribute("attribution", "biz_inbox");
@@ -1371,9 +1202,63 @@
             js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
+
+        /* fix ios autoplay mp4 video */
+        Object.defineProperty(HTMLMediaElement.prototype, 'playing', {
+            get: function () {
+                return !!(this.currentTime > 0 && !this.paused && !this.ended && this.readyState > 2);
+            }
+        });
+        const videoElement = document.getElementById('health_video');
+
+        document.querySelector('body').addEventListener('click touchstart', function () {
+
+            // const videoElement = document.getElementById('health_video');
+            if (videoElement.playing) {
+                // video is already playing so do nothing
+            }
+            else {
+                // video is not playing
+                // so play video now
+                videoElement.play();
+            }
+        });
+        if (typeof videoElement.loop == 'boolean') { // loop supported
+            videoElement.loop = true;
+        } else { // loop property not supported
+            videoElement.on('ended', function () {
+                this.currentTime = 0;
+                this.play();
+            }, false);
+        }
+        videoElement.play();
+        /* fix ios autoplay mp4 video */
+
+        function incrementValue() {
+            var value = parseInt(document.getElementById('number').value, 10);
+            var value2 = parseInt(document.getElementById('number2').value, 10);
+            value = isNaN(value) ? 0 : value;
+            value++;
+            value2++;
+            document.getElementById('number').value = value;
+            document.getElementById('number2').value = value2;
+        }
+        function decrementValue() {
+            var value = parseInt(document.getElementById('number').value, 10);
+            var value2 = parseInt(document.getElementById('number2').value, 10);
+            value = isNaN(value) ? 0 : value;
+            if (value > 1) {
+                value--;
+                value2--;
+                document.getElementById('number').value = value;
+                document.getElementById('number2').value = value2;
+            }
+
+        }
     </script>
 </body>
 
 
 <!-- Mirrored from thaothiengarden.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 24 Nov 2022 14:05:40 GMT -->
+
 </html>
