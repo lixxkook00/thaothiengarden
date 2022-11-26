@@ -11,7 +11,7 @@
 =============================================
 */
 :root {
-    --color-primary: #F85959;
+    --color-primary: #7FBD41;
 
     --color-white: #fff;
     --color-black: #000;
@@ -90,7 +90,7 @@ a:hover {
 }
 
 .heading {
-    font-size: 30px;
+    font-size: 23px;
     font-weight: 300;
     color: var(--color-text-1);
     line-height: 1.5;
@@ -109,7 +109,7 @@ a:hover {
 }
 
 .heading-section {
-    font-size: 26px;
+    font-size: 23px;
     font-weight: 400;
     color: var(--color-text-1);
 }
@@ -275,6 +275,15 @@ header .navbar-brand img {
 
 .navbar-collapse {
     flex-grow: unset;
+    /* border-top: 1px solid rgb(234 234 234); */
+}
+
+.dropdown-item{
+    margin-bottom: 0 !important;
+}
+
+.dropdown-item.active, .dropdown-item:active{
+    background-color: #7FBD41;
 }
 
 .navbar-toggler-icon {
@@ -313,12 +322,16 @@ header .navbar-brand img {
 }
 
 .dropdown-menu {
-    background-color: var(--color-bg-1);
+    background-color: #f3f3f3;
     border: 0;
+    padding-bottom: 0;
 }
 
 .dropdown-item {
     color: var(--color-text-1);
+    text-align: center;
+    font-size: 15px;
+    margin-bottom: 5px;
 }
 
 .header__mode {
@@ -383,11 +396,13 @@ header .navbar-brand img {
 #header.show .header__mode i,
 #header.show .navbar-toggler-icon {
     color: var(--color-text-1);
+    font-size: 15px;
+    font-weight: 500;
 }
 
 #header.scrolled .nav-link.active,
 #header.scrolled .nav-link:hover {
-    color: var(--color-primary);
+    color: #7FBD41;
 }
 
 #header.show {
@@ -402,7 +417,8 @@ header .navbar-brand img {
 
 .dropdown-item:focus,
 .dropdown-item:hover {
-    background-color: var(--color-primary);
+    background-color: #7FBD41;
+    color: #fff;
 }
 
 /* Toggle Dark Theme */
@@ -1055,7 +1071,7 @@ header .navbar-brand img {
 }
 
 .rest-content {
-    margin-top: 70px;
+    margin-top: 20px;
 }
 
 /* ===BLOG=== */
@@ -1109,8 +1125,10 @@ header .navbar-brand img {
 }
 
 .FAQ .card-header .faq-btn {
-    font-weight: bold;
-    padding: 15px 15px;
+    font-weight: 600;
+    padding: 10px;
+    font-style: italic;
+    font-size: 16px;
 }
 
 .FAQ .card-header .btn-light:focus {
@@ -1161,12 +1179,15 @@ border-radius: 5px !important;
 .map {
     background-color: var(--color-bg-1);
     /* height: 450px; */
+    margin: 20px 0;
+    border: 2px solid #7FBD41;
 }
 
 /* ===FOOTER=== */
 footer {
     background-color: var(--color-bg-footer);
     color: var(--color-white);
+    font-size: 13px;
 }
 
 footer .footer-heading {
@@ -1174,17 +1195,18 @@ footer .footer-heading {
 }
 
 footer .footer-heading img {
-    width: 85px;
+    width: 74px;
 }
 
 footer .heading-2 {
-    height: 85px;
+    height: 50px;
     display: flex;
     align-items: center;
 }
 
 footer .heading-2 h4 {
     margin-bottom: 0;
+    font-size: 20px;
 }
 
 .footer-body span {
@@ -1223,16 +1245,16 @@ footer li {
     font-size: 25px;
     margin-right: 10px;
     margin-top: 15px;
-    height: 50px;
-    width: 50px;
-    line-height: 50px;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
     text-align: center;
     background-color: rgba(255, 255, 255, 0.05);
     border-radius: 50%;
 }
 
 .footer-bottom {
-    margin-top: 50px;
+    margin-top: 0px;
     text-align: center;
     font-weight: 500;
 }
@@ -1586,8 +1608,8 @@ p {
                     BANNER
 =============================================
 */
-.banner {
-    background-image: url(../../Images/16.jpg.webp);
+.banner-hotel {
+    background-image: url(../../Images/16.jpg.webp) !important;
     background-position: center;
     background-size: cover;
     height: 100vh;
@@ -2106,7 +2128,7 @@ p {
     grid-template-columns: repeat(3, 1fr);
     justify-content: space-between;
     gap: 30px;
-
+    
     text-align: center;
     padding: 0 30px;
 }
@@ -2118,7 +2140,6 @@ p {
     margin-bottom: 30px;
     background-color: var(--color-bg-1);
     box-shadow: rgb(1 1 1 / 5%) 1px 1px 5px 0px;
-
     transition: all 0.5s ease;
 }
 
@@ -2523,7 +2544,7 @@ p {
 }
 
 .booking-bar-submit{
-    padding: 2px 8px;
+    padding: 8px 32px;
     background-color: #7FBD41;
     border: 1px solid #7FBD41;
     border-radius: 2px;
@@ -2531,7 +2552,7 @@ p {
     font-size: 14px;
     transition: all 0.5s ease-in-out;
     text-align: center;
-    min-width: 100px;
+    min-width: 160px;
 }
 
 .booking-bar-submit:hover{
@@ -2598,6 +2619,211 @@ p {
     margin-bottom: 10px;
 }
 
+.FAQ-title h2 {
+    font-size: 25px;
+}
+
+.navbar-toggler{
+    padding-right: 0;
+}
+
+.header__mode{
+    display: none;
+}
+
+.loading{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: #fff;
+  z-index: 1002323;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-direction: column;
+}
+
+.loading-logo{
+    transform: translateY(70px);
+    width: 120px;
+}
+
+.loadingio-spinner-ellipsis-u3mm3kyo8u8{
+    transform: scale(0.3);
+}
+
+@keyframes ldio-hfszo5zx7wp {
+    0% {
+        transform: translate(12px, 80px) scale(0);
+    }
+
+    25% {
+        transform: translate(12px, 80px) scale(0);
+    }
+
+    50% {
+        transform: translate(12px, 80px) scale(1);
+    }
+
+    75% {
+        transform: translate(80px, 80px) scale(1);
+    }
+
+    100% {
+        transform: translate(148px, 80px) scale(1);
+    }
+}
+
+@keyframes up-down {
+    0% {
+        transform: translateY(10px) scale(0.7);
+    }
+    100% {
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes ldio-hfszo5zx7wp-r {
+    0% {
+        transform: translate(148px, 80px) scale(1);
+    }
+
+    100% {
+        transform: translate(148px, 80px) scale(0);
+    }
+}
+
+@keyframes ldio-hfszo5zx7wp-c {
+    0% {
+        background: #88c03e
+    }
+
+    25% {
+        background: #73b741
+    }
+
+    50% {
+        background: #38a147
+    }
+
+    75% {
+        background: #73b741
+    }
+
+    100% {
+        background: #88c03e
+    }
+}
+
+.ldio-hfszo5zx7wp div {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transform: translate(80px, 80px) scale(1);
+    background: #88c03e;
+    animation: ldio-hfszo5zx7wp 1s infinite cubic-bezier(0, 0.5, 0.5, 1);
+}
+
+.ldio-hfszo5zx7wp div:nth-child(1) {
+    background: #73b741;
+    transform: translate(148px, 80px) scale(1);
+    animation: ldio-hfszo5zx7wp-r 0.25s infinite cubic-bezier(0, 0.5, 0.5, 1), ldio-hfszo5zx7wp-c 1s infinite step-start;
+}
+
+.ldio-hfszo5zx7wp div:nth-child(2) {
+    animation-delay: -0.25s;
+    background: #88c03e;
+}
+
+.ldio-hfszo5zx7wp div:nth-child(3) {
+    animation-delay: -0.5s;
+    background: #73b741;
+}
+
+.ldio-hfszo5zx7wp div:nth-child(4) {
+    animation-delay: -0.75s;
+    background: #38a147;
+}
+
+.ldio-hfszo5zx7wp div:nth-child(5) {
+    animation-delay: -1s;
+    background: #73b741;
+}
+
+.loadingio-spinner-ellipsis-u3mm3kyo8u8 {
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+    overflow: hidden;
+    background: none;
+}
+
+.ldio-hfszo5zx7wp {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform: translateZ(0) scale(1);
+    backface-visibility: hidden;
+    transform-origin: 0 0;
+    /* see note above */
+}
+
+.ldio-hfszo5zx7wp div {
+    box-sizing: content-box;
+}
+
+.maps{
+    width: 100%;
+    height: 100vh;
+    padding-top: 60px;
+    overflow: hidden;
+
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.check-point{
+    position: absolute;
+    width: 3%;
+    height: 5%;
+}
+
+.check-point--1{
+    top: 17%;
+    left: 9%;
+}
+
+.check-point--2{
+    top: 17%;
+    left: 30%;
+}
+
+.check-point img{
+    width: 100%;
+    animation: up-down 1s infinite linear alternate;
+}
+
+.maps-bg{
+    width: 100%;
+    filter: sepia(1);
+}
+
+.maps-wrapper{
+    height: 50vw;
+    width: 95vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    position: relative;
+}
+
 @media (min-width: 1000px) and (max-width: 1444px) {
     .mt-90{
         margin-top: 40px !important;
@@ -2648,6 +2874,19 @@ p {
         overflow: hidden;
         height: auto;
         width: 100%;
+    }
+
+    .FAQ .card-header .faq-btn{
+        font-size: 14px;
+        padding-right: 40px;
+    }
+
+    .FAQ .card-body {
+        font-size: 14px;
+    }
+
+    .navbar-collapse{
+        border-top: 1px solid rgb(234 234 234);
     }
 }
 
