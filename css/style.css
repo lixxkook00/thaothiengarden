@@ -2135,12 +2135,16 @@ p {
 
 .menu__detail {
     min-height: 330px;
-    padding: 25px;
+    padding: 40px 25px;
     border-radius: 2px;
     margin-bottom: 30px;
     background-color: var(--color-bg-1);
-    box-shadow: rgb(1 1 1 / 5%) 1px 1px 5px 0px;
+    font-size: 16px;
+    font-style: oblique;
+    /* box-shadow: rgb(1 1 1 / 5%) 1px 1px 5px 0px; */
     transition: all 0.5s ease;
+    background: url(../Images/menu-border.png) no-repeat center center;
+    background-size: contain;
 }
 
 .menu__detail h5 {
@@ -2153,7 +2157,7 @@ p {
 }
 
 .menu__detail ol li {
-    width: fit-content;
+    /* width: fit-content; */
     color: var(--color-text-1);
 }
 
@@ -2172,7 +2176,7 @@ p {
 
 .menu__detail:hover {
     transform: translateY(-0.25rem);
-    box-shadow: rgb(46 41 51 / 8%) 0px 2px 4px, rgb(71 63 79 / 16%) 0px 5px 10px;
+    /* box-shadow: rgb(46 41 51 / 8%) 0px 2px 4px, rgb(71 63 79 / 16%) 0px 5px 10px; */
 }
 
 .menu__detail:hover h5 {
@@ -2348,7 +2352,7 @@ p {
 
     .resServices__text h2 {
         font-size: 45px;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
         width: 100%;
     }
 
@@ -2381,6 +2385,7 @@ p {
 
     .memories__right p {
         margin-bottom: 36px;
+        text-align: justify;
     }
 
     .memories__right .btn-style {
@@ -2408,16 +2413,19 @@ p {
     }
 
     .res-heading {
-        font-size: 40px;
+        font-size: 26px;
         margin-bottom: 20px;
+        font-weight: 500;
     }
 
     .resServices__text h2 {
-        font-size: 40px;
+        font-size: 30px;
+        text-align: c;
     }
 
     .resServices__text p {
         width: 100%;
+        text-align: justify;
     }
 
     /* BOOKING */
